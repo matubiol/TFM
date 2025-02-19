@@ -133,7 +133,7 @@ data_TP53_mt <- subset(data_TP53, subset = TP53_mutation == "mutated")
 TP53.markers <- FindAllMarkers(data_TP53, only.pos = TRUE, group.by = "TP53_mutation") %>%
   filter(avg_log2FC > 1 & p_val_adj <= 0.05)
 
-############################################## TP53 COEXPRESSION ##############################################
+############################################## COEXPRESIÓN DEL GEN TP53 ##############################################
 
 # Prepara los objetos de Seurat para el análisis de WGCNA (Weighted Gene Co-expression Network Analysis)
 data_TP53_mt <- SetupForWGCNA(
@@ -304,7 +304,7 @@ ggvenn(venn,
        fill_color = c("#0073C2FF", "#EFC000FF", "#868686FF", "#CD534CFF"),
        set_name_size = 10, text_size = 10)
 
-############################################### GENE ENRICHMENT ###############################################
+############################################### ENRIQUECIMIENTO DE GENES ###############################################
 
 # Convertir los identificadores de Ensembl a ENTREZ
 # Se utiliza la función `bitr` para convertir los identificadores de genes en el formato de Ensembl a ENTREZID
